@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My new blog]]></title>
-  <link href="http://esantoro.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Code | My new blog]]></title>
+  <link href="http://esantoro.github.io/blog/categories/code/atom.xml" rel="self"/>
   <link href="http://esantoro.github.io/"/>
   <updated>2015-11-15T11:01:01+01:00</updated>
   <id>http://esantoro.github.io/</id>
@@ -57,7 +57,7 @@ back to the source.</p>
 
 <p>Here is the code, directly from my <code>~/.emacs</code>:</p>
 
-<figure class='code'><figcaption><span>run-current-buffer function </span></figcaption>
+<p><figure class='code'><figcaption><span>run-current-buffer function </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -74,33 +74,31 @@ back to the source.</p>
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='lisp'><span class='line'><span class="p">(</span><span class="nb">defun</span> <span class="nv">run-current-buffer</span> <span class="p">()</span>
-</span><span class='line'>  <span class="s">&quot;Saves the current buffer, executes it and gets the output</span>
-</span><span class='line'><span class="s">   in another buffer&quot;</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='lisp'><span class='line'><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="nb">defun</span> <span class="nv">run-current-buffer</span> <span class="p">()</span>
+</span><span class='line'>  <span class="nv">&amp;ldquo</span><span class="c1">;Saves the current buffer, executes it and gets the output</span>
+</span><span class='line'>   <span class="nv">in</span> <span class="nv">another</span> <span class="nv">buffer&amp;rdquo</span><span class="c1">;</span>
 </span><span class='line'>  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
 </span><span class='line'>  <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">null</span> <span class="p">(</span><span class="nv">buffer-file-name</span><span class="p">))</span> <span class="p">(</span><span class="nv">save-buffer</span><span class="p">))</span>
-</span><span class='line'>  <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nv">buffer-modified-p</span><span class="p">)</span> <span class="p">(</span><span class="nv">save-buffer</span><span class="p">))</span>
+</span><span class='line'>  <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nv">buffer-modified-p</span><span class="p">)</span> <span class="p">(</span><span class="nv">save-buffer</span><span class="p">))</span><span class="nv">&lt;/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="p">(</span><span class="k">let</span>
-</span><span class='line'>      <span class="p">((</span><span class="nv">output-buffer-name</span> <span class="p">(</span><span class="nv">concat</span> <span class="s">&quot;*Output: &quot;</span> <span class="p">(</span><span class="nv">buffer-name</span><span class="p">)</span>  <span class="s">&quot; *&quot;</span><span class="p">)))</span>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>  <span class="p">(</span><span class="k">let</span>
+</span><span class='line'>      <span class="p">((</span><span class="nv">output-buffer-name</span> <span class="p">(</span><span class="nv">concat</span> <span class="nv">&amp;ldquo</span><span class="c1">;&lt;em&gt;Output: &amp;rdquo; (buffer-name)  &amp;ldquo; &lt;/em&gt;&amp;rdquo;)))</span>
 </span><span class='line'>    <span class="p">(</span><span class="k">progn</span>
-</span><span class='line'>      <span class="p">(</span><span class="nv">shell-command</span> <span class="p">(</span><span class="nv">concat</span> <span class="s">&quot;chmod +x &quot;</span> <span class="p">(</span><span class="nv">buffer-file-name</span><span class="p">)))</span>
+</span><span class='line'>      <span class="p">(</span><span class="nv">shell-command</span> <span class="p">(</span><span class="nv">concat</span> <span class="nv">&amp;ldquo</span><span class="c1">;chmod +x &amp;rdquo; (buffer-file-name)))</span>
 </span><span class='line'>      <span class="p">(</span><span class="nv">shell-command</span> <span class="p">(</span><span class="nv">buffer-file-name</span><span class="p">)</span> <span class="nv">output-buffer-name</span><span class="p">)</span>
 </span><span class='line'>      <span class="p">(</span><span class="nv">switch-to-buffer</span> <span class="nv">output-buffer-name</span><span class="p">)</span>
-</span><span class='line'>      <span class="p">(</span><span class="nv">view-mode</span><span class="p">))))</span>
+</span><span class='line'>      <span class="p">(</span><span class="nv">view-mode</span><span class="p">))))</span><span class="nv">&lt;/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;&lt;s-return&gt;&quot;</span><span class="p">)</span> <span class="ss">&#39;run-current-buffer</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[I Am Trying Octopress]]></title>
-    <link href="http://esantoro.github.io/blog/2015/11/15/i-am-trying-octopress/"/>
-    <updated>2015-11-15T08:40:47+01:00</updated>
-    <id>http://esantoro.github.io/blog/2015/11/15/i-am-trying-octopress</id>
-    <content type="html"><![CDATA[<p>Tap tap tap. <strong>cough</strong>. This is only a test.</p>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="nv">&amp;ldquo</span><span class="c1">;&lt;s-return&gt;&amp;rdquo;) &amp;lsquo;run-current-buffer)&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
 ]]></content>
   </entry>
   

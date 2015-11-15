@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://esantoro.github.io/blog/2015/11/15/rapid-code-iteration-with-gnu-emacs/</loc>
+    <lastmod>2015-11-15T09:01:13+01:00</lastmod>
+  </url>
+  <url>
     <loc>http://esantoro.github.io/blog/2015/11/15/i-am-trying-octopress/</loc>
     <lastmod>2015-11-15T08:40:47+01:00</lastmod>
   </url>
@@ -9,5 +13,14 @@
   </url>
   <url>
     <loc>http://esantoro.github.io/</loc>
+  </url>
+  <url>
+    <loc>http://esantoro.github.io/blog/categories/emacs/</loc>
+  </url>
+  <url>
+    <loc>http://esantoro.github.io/blog/categories/programming/</loc>
+  </url>
+  <url>
+    <loc>http://esantoro.github.io/blog/categories/code/</loc>
   </url>
 </urlset>
