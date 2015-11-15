@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My new blog]]></title>
+  <title><![CDATA[Emanuele Santoro]]></title>
   <link href="http://esantoro.github.io/atom.xml" rel="self"/>
   <link href="http://esantoro.github.io/"/>
-  <updated>2015-11-15T11:01:01+01:00</updated>
+  <updated>2015-11-15T16:57:10+01:00</updated>
   <id>http://esantoro.github.io/</id>
   <author>
-    <name><![CDATA[Someone]]></name>
+    <name><![CDATA[Emanuele Santoro]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -73,10 +73,8 @@ back to the source.</p>
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
-<span class='line-number'>16</span>
 </pre></td><td class='code'><pre><code class='lisp'><span class='line'><span class="p">(</span><span class="nb">defun</span> <span class="nv">run-current-buffer</span> <span class="p">()</span>
-</span><span class='line'>  <span class="s">&quot;Saves the current buffer, executes it and gets the output</span>
-</span><span class='line'><span class="s">   in another buffer&quot;</span>
+</span><span class='line'>  <span class="s">&quot;Saves the current buffer, executes it and gets the output in another buffer&quot;</span>
 </span><span class='line'>  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
 </span><span class='line'>  <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">null</span> <span class="p">(</span><span class="nv">buffer-file-name</span><span class="p">))</span> <span class="p">(</span><span class="nv">save-buffer</span><span class="p">))</span>
 </span><span class='line'>  <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nv">buffer-modified-p</span><span class="p">)</span> <span class="p">(</span><span class="nv">save-buffer</span><span class="p">))</span>
