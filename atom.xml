@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My new blog]]></title>
+  <link href="http://esantoro.github.io/atom.xml" rel="self"/>
+  <link href="http://esantoro.github.io/"/>
+  <updated>2015-11-15T08:41:22+01:00</updated>
+  <id>http://esantoro.github.io/</id>
+  <author>
+    <name><![CDATA[Someone]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[I Am Trying Octopress]]></title>
+    <link href="http://esantoro.github.io/blog/2015/11/15/i-am-trying-octopress/"/>
+    <updated>2015-11-15T08:40:47+01:00</updated>
+    <id>http://esantoro.github.io/blog/2015/11/15/i-am-trying-octopress</id>
+    <content type="html"><![CDATA[<p>Tap tap tap. <strong>cough</strong>. This is only a test.</p>
+]]></content>
+  </entry>
+  
+</feed>
