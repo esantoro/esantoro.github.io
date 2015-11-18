@@ -9,7 +9,8 @@
   <meta name="author" content="Emanuele Santoro">
 
   
-  <meta name="description" content="The problem In this post I&rsquo;m going to show a quick hack to speed script writing with GNU Emacs. When writing some little script (quick and &hellip;">
+  <meta name="description" content="Emanuele Santoro "A man cannot remake himself without suffering, for he is both the marble and the sculptor" Hi!
+I am Emanuele Santoro. I am a &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,152 +68,29 @@
       <div>
 <article role="article">
   
-  <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/11/15/rapid-code-iteration-with-gnu-emacs/">Rapid Code Iteration With GNU Emacs</a></h1>
-    
-    
-      <p class="meta">
-        
+  <h1 style="margin-bottom: 5px;">Emanuele Santoro</h1>
 
 
+<h4 id="thequote" style="font-weight:normal; font-style:italic; width:100%; text-align: right; border-bottom: 1px dotted lightgray;">
+  "A man cannot remake himself without suffering, for he is both the marble and the sculptor"
+</h4>
 
 
-<time class='entry-date' datetime='2015-11-15T09:01:13+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>9:01 am</span></time>
-        
-      </p>
-    
-  </header>
+<p>
+  <img src="/images/me.jpg" style="float:left; margin: 0.5em 1.5em 1em 0.5em;" />
+</p>
 
+<p style="margin-bottom:2px;"><strong>Hi!</strong></p>
+<p>I am Emanuele Santoro. I am a student of Computer Engineering.</p>
 
-  <div class="entry-content"><h3>The problem</h3>
+<p>I write code, tinker with <strong>UNIX</strong> systems and programming languages and "do stuff".</p>
 
-<p>In this post I&rsquo;m going to show a quick hack to speed script writing with GNU Emacs.</p>
-
-<p>When writing some little script (quick and dirty scripts in particular), you
-often are in a <em>write-run-repeat</em> cycle, in which you write some code, see if
-it works as you expected, and then proceed writing the next piece of code.</p>
-
-<p>If you&rsquo;re using GNU Emacs, the simplest approach would be to use a shell in
-another window (&ldquo;window&rdquo; according to the Emacs terminology) and switch back and
-forth from the code to the shell.</p>
-
-<p>A better approach would be to press a couple of keys and have Emacs to run your
-code and show results back to you. That is what I implemented.</p>
-
-<h3>Other solutions</h3>
-
-<p>By I found <a href="http://ergoemacs.org/emacs/elisp_run_current_file.html">this</a>
-solution from the <a href="http://ergoemacs.org">ergoemacs.org</a> website.</p>
-
-<p>It&rsquo;s nice and a little more general than I needed, and it has to be updated
-for every new language you might want to run.</p>
-
-<p>This does not fit so nicely in an Unix environment, in particular for scripts
-authoring: as long as your <em>she-bang</em> is okay and your <code>PATH</code>s are okay, you
-should be just fine.</p>
-
-<h3>My solution</h3>
-
-<p>So my solution is to just save the file, mark it as executable, run it saving the output in a buffer, calling <code>view-mode</code> on that buffer and <code>switch-buffer</code> to it.</p>
-
-<p>The best thing about this is leveraging on Emacs' <code>view-mode</code>: after inspecting
-the output of your script, you can just press <code>q</code> to exit the buffer and go
-back to the source.</p>
-
-<h3>The code</h3>
-
-<p>Here is the code, directly from my <code>~/.emacs</code>:</p>
-
-<figure class='code'><figcaption><span>run-current-buffer function </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='lisp'><span class='line'><span class="p">(</span><span class="nb">defun</span> <span class="nv">run-current-buffer</span> <span class="p">()</span>
-</span><span class='line'>  <span class="s">&quot;Saves the current buffer, executes it and gets the output in another buffer&quot;</span>
-</span><span class='line'>  <span class="p">(</span><span class="nv">interactive</span><span class="p">)</span>
-</span><span class='line'>  <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">null</span> <span class="p">(</span><span class="nv">buffer-file-name</span><span class="p">))</span> <span class="p">(</span><span class="nv">save-buffer</span><span class="p">))</span>
-</span><span class='line'>  <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nv">buffer-modified-p</span><span class="p">)</span> <span class="p">(</span><span class="nv">save-buffer</span><span class="p">))</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="p">(</span><span class="k">let</span>
-</span><span class='line'>      <span class="p">((</span><span class="nv">output-buffer-name</span> <span class="p">(</span><span class="nv">concat</span> <span class="s">&quot;*Output: &quot;</span> <span class="p">(</span><span class="nv">buffer-name</span><span class="p">)</span>  <span class="s">&quot; *&quot;</span><span class="p">)))</span>
-</span><span class='line'>    <span class="p">(</span><span class="k">progn</span>
-</span><span class='line'>      <span class="p">(</span><span class="nv">shell-command</span> <span class="p">(</span><span class="nv">concat</span> <span class="s">&quot;chmod +x &quot;</span> <span class="p">(</span><span class="nv">buffer-file-name</span><span class="p">)))</span>
-</span><span class='line'>      <span class="p">(</span><span class="nv">shell-command</span> <span class="p">(</span><span class="nv">buffer-file-name</span><span class="p">)</span> <span class="nv">output-buffer-name</span><span class="p">)</span>
-</span><span class='line'>      <span class="p">(</span><span class="nv">switch-to-buffer</span> <span class="nv">output-buffer-name</span><span class="p">)</span>
-</span><span class='line'>      <span class="p">(</span><span class="nv">view-mode</span><span class="p">))))</span>
-</span><span class='line'>
-</span><span class='line'><span class="p">(</span><span class="nv">global-set-key</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&quot;&lt;s-return&gt;&quot;</span><span class="p">)</span> <span class="ss">&#39;run-current-buffer</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/11/15/i-am-trying-octopress/">I Am Trying Octopress</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-11-15T08:40:47+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>8:40 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Tap tap tap. <strong>cough</strong>. This is only a test.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 
   
     <footer>
       
       
         <div class="sharing">
-  
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://esantoro.github.io/index.html" data-via="" data-counturl="http://esantoro.github.io/index.html" >Tweet</a>
   
   
   
@@ -265,16 +143,6 @@ back to the source.</p>
 
 
 
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 
