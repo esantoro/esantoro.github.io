@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Blog | Emanuele Santoro]]></title>
+  <link href="http://esantoro.github.io/blog/categories/blog/atom.xml" rel="self"/>
+  <link href="http://esantoro.github.io/"/>
+  <updated>2015-11-18T18:21:34+01:00</updated>
+  <id>http://esantoro.github.io/</id>
+  <author>
+    <name><![CDATA[Emanuele Santoro]]></name>
+    <email><![CDATA[manu@santoro.tk]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[I Am Trying Octopress]]></title>
+    <link href="http://esantoro.github.io/blog/2015/11/18/trying-octopress/"/>
+    <updated>2015-11-18T17:10:12+01:00</updated>
+    <id>http://esantoro.github.io/blog/2015/11/18/trying-octopress</id>
+    <content type="html"><![CDATA[<p>I am trying Octopress. I was convinced in doind so by viewing
+<a href="http://www.jesshamrick.com/">Jessica Hamrick</a>&rsquo;s website.</p>
+
+<p>I have been using Emacs and Org-Mode to create my previous website but
+it poses some problems when trying to define a visual aspect different
+from the standard one.</p>
+
+<p>I am not yet 100% sure I want to make the switch, and I might keep
+some parts of the website as org-generated documents anyway (did I
+tell you how cool is org-capture?).</p>
+]]></content>
+  </entry>
+  
+</feed>
