@@ -4,7 +4,7 @@
   <title><![CDATA[Emanuele Santoro]]></title>
   <link href="http://esantoro.github.io/atom.xml" rel="self"/>
   <link href="http://esantoro.github.io/"/>
-  <updated>2015-12-24T06:31:55+01:00</updated>
+  <updated>2016-01-12T05:19:23+01:00</updated>
   <id>http://esantoro.github.io/</id>
   <author>
     <name><![CDATA[Emanuele Santoro]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Books in 2016]]></title>
+    <link href="http://esantoro.github.io/blog/2016/01/12/books-in-2016/"/>
+    <updated>2016-01-12T05:14:41+01:00</updated>
+    <id>http://esantoro.github.io/blog/2016/01/12/books-in-2016</id>
+    <content type="html"><![CDATA[<p>This post is about the books I&rsquo;ve started reading and/or I&rsquo;ve finished
+reading in 2016.</p>
+
+<h3>January</h3>
+
+<ul>
+<li>(Currently Reading) <a href="http://www.amazon.com/Brain-Rules-Principles-Surviving-Thriving/dp/0979777747?tag=duckduckgo-d-20">&ldquo;Il cervello, istruzioni per l'uso&rdquo; by John Medina</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Some Goals for 2016]]></title>
@@ -48,6 +65,18 @@ Books are listed in no particular order.</p>
 <li><a href="http://eu.wiley.com/WileyCDA/WileyTitle/productCd-EHEP002900.html">Algorithms and Data Structures in Java</a></li>
 <li><a href="https://psg.com/~dlamkins/sl/">Successful Lisp</a> or <a href="http://www.barnesandnoble.com/w/ansi-common-lisp-paul-graham/1100503034;jsessionid=8FC454CD6F6DA5D39CDE81FDE37E87A0.prodny_store01-atgap07?ean=9780133708752&amp;st=SEM&amp;sid=BNB_DRS_Summer15%20HV%20106%20A_00000000&amp;2sid=Bing_NON_e&amp;sourceId=SEBiS68694190">ANSI Common Lisp</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Getting_Things_Done">Getting things done</a></li>
+</ul>
+
+
+<h3>Language I want to learn</h3>
+
+<p>More likely, I&rsquo;ll be learning one or two of them, but hopefully I&rsquo;ll
+play a bit with each of them.</p>
+
+<ul>
+<li>Common Lisp</li>
+<li>C++</li>
+<li>Elixir / Erlang</li>
 </ul>
 
 ]]></content>

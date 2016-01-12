@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Books | Emanuele Santoro]]></title>
+  <link href="http://esantoro.github.io/blog/categories/books/atom.xml" rel="self"/>
+  <link href="http://esantoro.github.io/"/>
+  <updated>2016-01-12T05:19:23+01:00</updated>
+  <id>http://esantoro.github.io/</id>
+  <author>
+    <name><![CDATA[Emanuele Santoro]]></name>
+    <email><![CDATA[manu@santoro.tk]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Books in 2016]]></title>
+    <link href="http://esantoro.github.io/blog/2016/01/12/books-in-2016/"/>
+    <updated>2016-01-12T05:14:41+01:00</updated>
+    <id>http://esantoro.github.io/blog/2016/01/12/books-in-2016</id>
+    <content type="html"><![CDATA[<p>This post is about the books I&rsquo;ve started reading and/or I&rsquo;ve finished
+reading in 2016.</p>
+
+<h3>January</h3>
+
+<ul>
+<li>(Currently Reading) <a href="http://www.amazon.com/Brain-Rules-Principles-Surviving-Thriving/dp/0979777747?tag=duckduckgo-d-20">&ldquo;Il cervello, istruzioni per l'uso&rdquo; by John Medina</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
